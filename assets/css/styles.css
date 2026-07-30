@@ -400,6 +400,33 @@ h3 em {
   background: var(--navy);
 }
 
+.hero--photo {
+  position: relative;
+  display: block;
+  min-height: min(760px, calc(100vh - 118px));
+  overflow: hidden;
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(7, 24, 43, 0.97) 0%,
+      rgba(7, 24, 43, 0.88) 25%,
+      rgba(7, 24, 43, 0.52) 48%,
+      rgba(7, 24, 43, 0.08) 72%
+    ),
+    var(--hero-image);
+  background-position: center center;
+  background-size: cover;
+}
+
+.hero--photo::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  content: "";
+  pointer-events: none;
+}
+
 .hero__copy {
   position: relative;
   z-index: 2;
@@ -407,6 +434,11 @@ h3 em {
   flex-direction: column;
   justify-content: center;
   padding: clamp(3rem, 7vw, 7.5rem);
+}
+
+.hero--photo .hero__copy {
+  width: min(54%, 760px);
+  min-height: min(760px, calc(100vh - 118px));
 }
 
 .hero__copy h1 {
@@ -1298,8 +1330,17 @@ h3 em {
     grid-template-columns: 1fr 0.9fr;
   }
 
+  .hero--photo {
+    display: block;
+    background-position: 58% center;
+  }
+
   .hero__copy {
     padding: 4rem;
+  }
+
+  .hero--photo .hero__copy {
+    width: 58%;
   }
 
   .hero__copy h1 {
@@ -1349,9 +1390,30 @@ h3 em {
     grid-template-columns: 1fr;
   }
 
+  .hero--photo {
+    min-height: 760px;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(7, 24, 43, 0.22) 0%,
+        rgba(7, 24, 43, 0.38) 42%,
+        rgba(7, 24, 43, 0.96) 100%
+      ),
+      var(--hero-image);
+    background-position: 64% center;
+  }
+
   .hero__copy {
     min-height: 580px;
     padding: 4rem 4vw;
+  }
+
+  .hero--photo .hero__copy {
+    width: 100%;
+    min-height: 760px;
+    justify-content: flex-end;
+    padding-top: 14rem;
+    padding-bottom: 4rem;
   }
 
   .hero__copy h1 {
@@ -1488,6 +1550,11 @@ h3 em {
 
   .hero__copy {
     min-height: 540px;
+  }
+
+  .hero--photo,
+  .hero--photo .hero__copy {
+    min-height: 720px;
   }
 
   .hero__copy h1 {

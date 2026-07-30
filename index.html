@@ -6,7 +6,7 @@ body_class: home
 ---
 
 <section class="hero-section">
-  <div class="hero shell">
+  <div class="hero hero--photo shell" style="--hero-image: url('{{ '/assets/images/juan-manuel-nerina-hero.webp' | relative_url }}');">
     <div class="hero__copy" data-reveal>
       <p class="eyebrow eyebrow--light">Fe · Familia · Propósito</p>
       <h1>Una vida de fe.<br>Un <em>llamado compartido.</em></h1>
@@ -14,20 +14,6 @@ body_class: home
       <div class="button-row">
         <a class="button button--light" href="{{ '/nosotros/' | relative_url }}">Conoce nuestra historia <span aria-hidden="true">→</span></a>
         <a class="text-link text-link--light" href="{{ '/ministerio/' | relative_url }}">Nuestro ministerio</a>
-      </div>
-    </div>
-
-    <div class="hero__visual" data-reveal>
-      <div class="portrait-stage" role="img" aria-label="Espacio para la fotografía principal de Juan Manuel y Nerina">
-        <span class="portrait-stage__line portrait-stage__line--one" aria-hidden="true"></span>
-        <span class="portrait-stage__line portrait-stage__line--two" aria-hidden="true"></span>
-        <span class="portrait-stage__orb" aria-hidden="true"></span>
-        <div class="portrait-stage__monogram" aria-hidden="true">
-          <span>JM</span>
-          <small>&amp;</small>
-          <span>NC</span>
-        </div>
-        <p>Fotografía principal</p>
       </div>
     </div>
   </div>
@@ -168,4 +154,3 @@ body_class: home
     </div>
   </div>
 </section>
-
