@@ -1045,7 +1045,7 @@ h3 em {
       rgba(7, 24, 43, 0.94) 100%
     ),
     var(--about-hero-image);
-  background-position: 45% center;
+  background-position: 45% top;
   background-size: cover;
 }
 
@@ -1427,7 +1427,7 @@ h3 em {
   }
 
   .page-hero--about-photo {
-    background-position: 43% center;
+    background-position: 43% top;
   }
 
   .page-hero--about-photo .page-hero__content {
@@ -1599,7 +1599,7 @@ h3 em {
         rgba(7, 24, 43, 0.96) 100%
       ),
       var(--about-hero-image);
-    background-position: 43% center;
+    background-position: 43% top;
   }
 
   .page-hero--about-photo .page-hero__inner {
