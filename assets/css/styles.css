@@ -388,7 +388,7 @@ h3 em {
 /* Home hero */
 .hero-section {
   overflow: hidden;
-  padding: 1.5rem 0 0;
+  padding: 0;
   background: var(--navy-deep);
   color: var(--white);
 }
@@ -403,19 +403,22 @@ h3 em {
 .hero--photo {
   position: relative;
   display: block;
-  min-height: min(760px, calc(100vh - 118px));
+  width: 100%;
+  max-width: none;
+  min-height: min(820px, calc(100vh - 94px));
+  margin: 0;
   overflow: hidden;
   background-color: var(--navy);
   background-image:
     linear-gradient(
       90deg,
-      rgba(7, 24, 43, 0.97) 0%,
-      rgba(7, 24, 43, 0.88) 25%,
-      rgba(7, 24, 43, 0.52) 48%,
-      rgba(7, 24, 43, 0.08) 72%
+      rgba(7, 24, 43, 0.04) 0%,
+      rgba(7, 24, 43, 0.05) 43%,
+      rgba(7, 24, 43, 0.55) 65%,
+      rgba(7, 24, 43, 0.91) 100%
     ),
     var(--hero-image);
-  background-position: center center;
+  background-position: 48% center;
   background-size: cover;
 }
 
@@ -437,14 +440,16 @@ h3 em {
 }
 
 .hero--photo .hero__copy {
-  width: min(54%, 760px);
-  min-height: min(760px, calc(100vh - 118px));
+  width: min(43%, 650px);
+  min-height: min(820px, calc(100vh - 94px));
+  margin-left: auto;
+  padding: clamp(3rem, 5vw, 6rem);
 }
 
 .hero__copy h1 {
   max-width: 680px;
   margin-bottom: 1.75rem;
-  font-size: clamp(3.6rem, 6.1vw, 7rem);
+  font-size: clamp(3.3rem, 4.8vw, 5.8rem);
   letter-spacing: -0.035em;
 }
 
@@ -1332,7 +1337,7 @@ h3 em {
 
   .hero--photo {
     display: block;
-    background-position: 58% center;
+    background-position: 47% center;
   }
 
   .hero__copy {
@@ -1340,7 +1345,8 @@ h3 em {
   }
 
   .hero--photo .hero__copy {
-    width: 58%;
+    width: 48%;
+    padding: 3.25rem;
   }
 
   .hero__copy h1 {
@@ -1395,12 +1401,12 @@ h3 em {
     background-image:
       linear-gradient(
         180deg,
-        rgba(7, 24, 43, 0.22) 0%,
-        rgba(7, 24, 43, 0.38) 42%,
+        rgba(7, 24, 43, 0.05) 0%,
+        rgba(7, 24, 43, 0.13) 40%,
         rgba(7, 24, 43, 0.96) 100%
       ),
       var(--hero-image);
-    background-position: 64% center;
+    background-position: 48% center;
   }
 
   .hero__copy {
