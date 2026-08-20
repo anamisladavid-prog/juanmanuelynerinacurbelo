@@ -1176,45 +1176,12 @@ h3 em {
 }
 
 .biography-layout {
-  display: grid;
-  grid-template-columns: minmax(230px, 0.55fr) minmax(0, 1.45fr);
-  gap: clamp(3rem, 9vw, 9rem);
   padding: clamp(4rem, 8vw, 7.5rem) 0;
 }
 
-.biography-facts {
-  align-self: start;
-  border-top: 1px solid var(--line);
-}
-
-.biography-facts div {
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 1rem;
-  align-items: center;
-  padding: 1.4rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.biography-facts strong {
-  color: var(--blue);
-  font-family: var(--serif);
-  font-size: 2.7rem;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.biography-facts span {
-  color: rgba(21, 36, 54, 0.64);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
 .biography-copy {
-  max-width: 790px;
+  max-width: 900px;
+  margin-inline: auto;
 }
 
 .biography-copy p {
@@ -2062,10 +2029,6 @@ body.demo-checkout-open {
 @media (max-width: 560px) {
   .family-story__names {
     grid-template-columns: 1fr;
-  }
-
-  .biography-facts div {
-    grid-template-columns: 78px 1fr;
   }
 
   .book-offer__features {
