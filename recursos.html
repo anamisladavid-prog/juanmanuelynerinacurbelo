@@ -37,7 +37,7 @@ permalink: /recursos/
     <p class="eyebrow eyebrow--light">Reflexionar</p>
     <h2>Escritos</h2>
     <p>Reflexiones sobre fe, familia, liderazgo y vida cotidiana.</p>
-    <a class="text-link text-link--light library-card__link" href="#escritos">Ver publicación <span aria-hidden="true">↓</span></a>
+    <a class="text-link text-link--light library-card__link" href="{{ '/recursos/escritos/' | relative_url }}">Ver escritos <span aria-hidden="true">→</span></a>
   </article>
 </section>
 
@@ -71,60 +71,3 @@ permalink: /recursos/
     </article>
   </div>
 </section>
-
-<section class="book-offer" id="escritos" aria-labelledby="book-title">
-  <div class="book-offer__inner shell">
-    <div class="book-offer__visual" data-reveal>
-      <div class="book-offer__cover-frame">
-        <img
-          src="{{ '/assets/images/libro-liderar-en-plenitud-de-vida.webp' | relative_url }}"
-          alt="Portada del libro Liderar en Plenitud de Vida, Escuela de Líderes 2026-2027"
-          width="1200"
-          height="1553"
-          loading="lazy"
-        >
-      </div>
-      <span class="book-offer__edition">Edición digital · 2026-2027</span>
-    </div>
-
-    <div class="book-offer__copy" data-reveal>
-      <p class="eyebrow">Escritos · Formación ministerial</p>
-      <h2 id="book-title">Liderar en <em>Plenitud de Vida</em></h2>
-      <p class="book-offer__authors">Pastores Juan Manuel y Nerina Curbelo</p>
-      <p class="book-offer__lead">No se trata solamente de ocupar un lugar de liderazgo, sino de convertirse en la persona que Dios puede usar para transformar vidas.</p>
-      <p>Este recorrido de formación reúne años de experiencia pastoral, principios bíblicos y herramientas prácticas para quienes desean servir con madurez, libertad y propósito. A través de veinte lecciones, aprenderás a fortalecer tu carácter, cuidar tu vida espiritual, comprender el gobierno de la Iglesia y desarrollar equipos ministeriales sanos que inspiren a otros.</p>
-
-      <ul class="book-offer__features" aria-label="Contenido destacado del libro">
-        <li><span>20</span> lecciones de formación integral</li>
-        <li><span>181</span> páginas de enseñanza y aplicación</li>
-        <li><span>1</span> visión: liderar desde la libertad y el propósito</li>
-      </ul>
-
-      <div class="book-offer__actions">
-        <button class="button button--blue" type="button" data-demo-checkout>Abrir pago de prueba <span aria-hidden="true">→</span></button>
-        <p>Demostración visual. No se realizará ningún cobro.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="demo-checkout" data-demo-checkout-modal hidden>
-  <button class="demo-checkout__backdrop" type="button" aria-label="Cerrar pago de prueba" data-demo-checkout-close></button>
-  <section class="demo-checkout__dialog" role="dialog" aria-modal="true" aria-labelledby="demo-checkout-title">
-    <button class="demo-checkout__close" type="button" aria-label="Cerrar" data-demo-checkout-close>×</button>
-    <p class="eyebrow">Pago de prueba</p>
-    <h2 id="demo-checkout-title">Liderar en Plenitud de Vida</h2>
-    <div class="demo-checkout__product">
-      <img src="{{ '/assets/images/libro-liderar-en-plenitud-de-vida.webp' | relative_url }}" alt="" width="120" height="155">
-      <div>
-        <strong>Edición digital</strong>
-        <span>Precio por anunciar</span>
-      </div>
-    </div>
-    <div class="demo-checkout__notice">
-      <strong>Esta es solamente una demostración.</strong>
-      <p>La plataforma de pago todavía no está conectada. No se solicitarán datos bancarios ni se realizará ningún cobro.</p>
-    </div>
-    <button class="button button--blue demo-checkout__button" type="button" data-demo-checkout-close>Entendido</button>
-  </section>
-</div>

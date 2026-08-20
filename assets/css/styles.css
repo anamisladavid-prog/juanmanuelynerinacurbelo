@@ -1498,6 +1498,33 @@ h3 em {
     var(--white);
 }
 
+.resource-detail-header {
+  padding: clamp(4rem, 8vw, 7rem) 0 clamp(5rem, 10vw, 9rem);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.resource-detail-header__inner > .text-link {
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.resource-detail-header__inner > div {
+  max-width: 1050px;
+}
+
+.resource-detail-header h1 {
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 8rem);
+}
+
+.resource-detail-header h1 em {
+  color: var(--blue-light);
+}
+
+.book-offer--detail {
+  padding-top: clamp(6rem, 11vw, 11rem);
+}
+
 .book-offer::after {
   position: absolute;
   width: 420px;
