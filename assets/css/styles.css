@@ -1197,64 +1197,17 @@ h3 em {
   color: rgba(21, 36, 54, 0.72) !important;
 }
 
-.family-story {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.85fr) minmax(360px, 1.15fr);
-  gap: clamp(3rem, 7vw, 7rem);
-  padding: clamp(3rem, 6vw, 5.5rem);
+.family-verse-band {
+  padding: clamp(4rem, 8vw, 7rem) 0;
   background: var(--navy);
   color: var(--white);
 }
 
-.family-story__intro h2 {
-  max-width: 520px;
-  margin-bottom: 1.5rem;
-  font-size: clamp(3rem, 5vw, 5rem);
-}
-
-.family-story__intro > p:not(.eyebrow) {
-  color: rgba(255, 255, 255, 0.66);
-}
-
-.family-story__names {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 5rem);
-}
-
-.family-story__names > div {
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
-}
-
-.family-story__names span {
-  display: block;
-  margin-bottom: 1.4rem;
-  color: var(--blue-light);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.family-story__names p {
-  margin-bottom: 0.8rem;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.82rem;
-}
-
-.family-story__names strong {
-  color: var(--white);
-}
-
-.family-story blockquote {
-  grid-column: 1 / -1;
-  margin: 1rem 0 0;
-  padding-top: 2.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
+.family-verse-band blockquote {
+  margin: 0;
   color: var(--blue-light);
   font-family: var(--serif);
-  font-size: clamp(2.1rem, 4vw, 4rem);
+  font-size: clamp(2.8rem, 6vw, 6rem);
   font-style: italic;
   line-height: 1.05;
   text-align: center;
@@ -1901,13 +1854,8 @@ body.demo-checkout-open {
   .page-hero__inner,
   .contact-layout,
   .biography-heading,
-  .biography-layout,
-  .family-story {
+  .biography-layout {
     grid-template-columns: 1fr;
-  }
-
-  .family-story__names {
-    grid-template-columns: 1fr 1fr;
   }
 
   .editorial-grid,
@@ -2029,10 +1977,6 @@ body.demo-checkout-open {
 }
 
 @media (max-width: 560px) {
-  .family-story__names {
-    grid-template-columns: 1fr;
-  }
-
   .book-offer__features {
     grid-template-columns: 1fr;
   }
