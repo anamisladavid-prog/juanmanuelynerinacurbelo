@@ -673,10 +673,7 @@ h3 em {
 
 .editorial-photo__image {
   width: 100%;
-  min-height: min(760px, 75vw);
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
-  object-position: center center;
+  height: auto;
   box-shadow: 0 30px 70px rgba(7, 24, 43, 0.16);
 }
 
@@ -1917,10 +1914,6 @@ body.demo-checkout-open {
     min-height: 620px;
   }
 
-  .editorial-photo__image {
-    min-height: 620px;
-  }
-
   .photo-caption {
     right: -1.3rem;
   }
@@ -2115,10 +2108,6 @@ body.demo-checkout-open {
 
   .photo-placeholder--portrait,
   .photo-placeholder--tall {
-    min-height: 520px;
-  }
-
-  .editorial-photo__image {
     min-height: 520px;
   }
 
