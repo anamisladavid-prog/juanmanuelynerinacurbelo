@@ -1198,19 +1198,60 @@ h3 em {
 }
 
 .family-verse-band {
-  padding: clamp(4rem, 8vw, 7rem) 0;
-  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(6rem, 12vw, 11rem) 0;
+  background:
+    radial-gradient(circle at 50% 140%, rgba(61, 115, 168, 0.34), transparent 42%),
+    var(--navy-deep);
   color: var(--white);
 }
 
+.family-verse-band::before,
+.family-verse-band::after {
+  position: absolute;
+  width: clamp(220px, 32vw, 500px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(184, 210, 231, 0.12);
+  border-radius: 50%;
+  content: "";
+}
+
+.family-verse-band::before {
+  top: -72%;
+  left: -12%;
+}
+
+.family-verse-band::after {
+  right: -14%;
+  bottom: -78%;
+}
+
+.family-verse-band .shell {
+  position: relative;
+  z-index: 1;
+}
+
+.family-verse-band .shell::before {
+  display: block;
+  width: 72px;
+  margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--blue-light);
+  content: "";
+}
+
 .family-verse-band blockquote {
-  margin: 0;
-  color: var(--blue-light);
+  max-width: 1180px;
+  margin: 0 auto;
+  color: var(--white);
   font-family: var(--serif);
-  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-size: clamp(3.6rem, 7.5vw, 8rem);
+  font-weight: 400;
   font-style: italic;
-  line-height: 1.05;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
   text-align: center;
+  text-wrap: balance;
 }
 
 .values-section {
