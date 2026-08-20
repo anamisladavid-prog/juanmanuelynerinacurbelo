@@ -1,0 +1,36 @@
+name: Actualizar último video de YouTube
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-latest-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el sitio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Consultar el canal de YouTube
+        run: node scripts/update-youtube.mjs
+
+      - name: Publicar el video nuevo
+        run: |
+          if git diff --quiet -- _data/latest-youtube.json; then
+            echo "El video publicado ya es el más reciente."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- _data/latest-youtube.json
+          git commit -m "Actualizar último video de YouTube"
+          git push

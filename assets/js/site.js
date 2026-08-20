@@ -78,3 +78,24 @@ if (demoCheckoutButton && demoCheckoutModal) {
     if (event.key === "Escape" && !demoCheckoutModal.hidden) closeDemoCheckout();
   });
 }
+
+const messagesToggle = document.querySelector("[data-messages-toggle]");
+const messagesPanel = document.querySelector("[data-messages-panel]");
+
+if (messagesToggle && messagesPanel) {
+  const setMessagesOpen = (open, shouldScroll = false) => {
+    messagesPanel.hidden = !open;
+    messagesToggle.setAttribute("aria-expanded", String(open));
+    const arrow = messagesToggle.querySelector("[aria-hidden='true']");
+    if (arrow) arrow.textContent = open ? "↑" : "↓";
+    if (open && shouldScroll) {
+      messagesPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  messagesToggle.addEventListener("click", () => {
+    setMessagesOpen(messagesPanel.hidden, true);
+  });
+
+  if (window.location.hash === "#mensajes") setMessagesOpen(true);
+}

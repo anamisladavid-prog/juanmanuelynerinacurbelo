@@ -23,7 +23,7 @@ permalink: /recursos/
     <p class="eyebrow">Escuchar</p>
     <h2>Mensajes</h2>
     <p>Predicaciones y conversaciones para fortalecer tu vida espiritual.</p>
-    <span class="coming-soon">Próximamente</span>
+    <button class="text-link library-card__link library-card__button" type="button" aria-expanded="false" aria-controls="mensajes" data-messages-toggle>Ver mensajes <span aria-hidden="true">↓</span></button>
   </article>
   <article class="library-card library-card--mid" data-reveal>
     <span class="library-card__index">02</span>
@@ -39,6 +39,37 @@ permalink: /recursos/
     <p>Reflexiones sobre fe, familia, liderazgo y vida cotidiana.</p>
     <a class="text-link text-link--light library-card__link" href="#escritos">Ver publicación <span aria-hidden="true">↓</span></a>
   </article>
+</section>
+
+{% assign latest_video = site.data["latest-youtube"] %}
+<section class="messages-panel" id="mensajes" aria-labelledby="messages-title" data-messages-panel hidden>
+  <div class="messages-panel__inner shell">
+    <div class="messages-panel__intro" data-reveal>
+      <p class="eyebrow eyebrow--light">Canal oficial de YouTube</p>
+      <h2 id="messages-title">Mira los últimos mensajes de Juan y Neri.</h2>
+      <p>Encuentra predicaciones, enseñanzas y conversaciones que te ayudarán a fortalecer tu fe, crecer espiritualmente y vivir con propósito.</p>
+      <a class="button button--light" href="https://www.youtube.com/@juanmanuelynerinacurbelo" target="_blank" rel="noopener noreferrer">Visitar el canal <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <article class="latest-message" data-reveal>
+      <div class="latest-message__video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/{{ latest_video.video_id }}"
+          title="{{ latest_video.title | escape }}"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="latest-message__copy">
+        <span>Último mensaje publicado</span>
+        <h3>{{ latest_video.title }}</h3>
+        <p>{{ latest_video.description }}</p>
+        <a class="text-link text-link--light" href="{{ latest_video.url }}" target="_blank" rel="noopener noreferrer">Ver en YouTube <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
 </section>
 
 <section class="book-offer" id="escritos" aria-labelledby="book-title">
