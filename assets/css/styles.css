@@ -1149,6 +1149,148 @@ h3 em {
   color: rgba(21, 36, 54, 0.7);
 }
 
+.biography-section {
+  padding: clamp(5rem, 10vw, 10rem) 0;
+  background: var(--ivory);
+}
+
+.biography-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: end;
+  padding-bottom: clamp(3rem, 6vw, 5.5rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.biography-heading h2 {
+  max-width: 880px;
+  margin-bottom: 0;
+  color: var(--navy);
+  font-size: clamp(3.4rem, 6vw, 6.5rem);
+}
+
+.biography-heading > p {
+  margin-bottom: 0.5rem;
+  color: rgba(21, 36, 54, 0.68);
+}
+
+.biography-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(3rem, 9vw, 9rem);
+  padding: clamp(4rem, 8vw, 7.5rem) 0;
+}
+
+.biography-facts {
+  align-self: start;
+  border-top: 1px solid var(--line);
+}
+
+.biography-facts div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.biography-facts strong {
+  color: var(--blue);
+  font-family: var(--serif);
+  font-size: 2.7rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.biography-facts span {
+  color: rgba(21, 36, 54, 0.64);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.biography-copy {
+  max-width: 790px;
+}
+
+.biography-copy p {
+  color: rgba(21, 36, 54, 0.72);
+}
+
+.biography-copy__lead {
+  color: var(--navy) !important;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 2.7vw, 2.55rem);
+  line-height: 1.2;
+}
+
+.family-story {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(360px, 1.15fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  padding: clamp(3rem, 6vw, 5.5rem);
+  background: var(--navy);
+  color: var(--white);
+}
+
+.family-story__intro h2 {
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.family-story__intro > p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.family-story__names {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.family-story__names > div {
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.family-story__names span {
+  display: block;
+  margin-bottom: 1.4rem;
+  color: var(--blue-light);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.family-story__names p {
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+}
+
+.family-story__names strong {
+  color: var(--white);
+}
+
+.family-story blockquote {
+  grid-column: 1 / -1;
+  margin: 1rem 0 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--blue-light);
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  font-style: italic;
+  line-height: 1.05;
+  text-align: center;
+}
+
 .values-section {
   padding: clamp(5rem, 9vw, 9rem) 0;
   background: var(--blue-pale);
@@ -1788,8 +1930,15 @@ body.demo-checkout-open {
   .editorial-grid,
   .mission-grid,
   .page-hero__inner,
-  .contact-layout {
+  .contact-layout,
+  .biography-heading,
+  .biography-layout,
+  .family-story {
     grid-template-columns: 1fr;
+  }
+
+  .family-story__names {
+    grid-template-columns: 1fr 1fr;
   }
 
   .editorial-grid,
@@ -1911,6 +2060,14 @@ body.demo-checkout-open {
 }
 
 @media (max-width: 560px) {
+  .family-story__names {
+    grid-template-columns: 1fr;
+  }
+
+  .biography-facts div {
+    grid-template-columns: 78px 1fr;
+  }
+
   .book-offer__features {
     grid-template-columns: 1fr;
   }
