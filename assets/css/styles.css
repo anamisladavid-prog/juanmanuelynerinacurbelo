@@ -1155,10 +1155,6 @@ h3 em {
 }
 
 .biography-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
-  gap: clamp(3rem, 8vw, 8rem);
-  align-items: end;
   padding-bottom: clamp(3rem, 6vw, 5.5rem);
   border-bottom: 1px solid var(--line);
 }
@@ -1171,28 +1167,30 @@ h3 em {
 }
 
 .biography-heading > p {
-  margin-bottom: 0.5rem;
+  max-width: 900px;
+  margin: 1.75rem 0 0;
   color: rgba(21, 36, 54, 0.68);
 }
 
 .biography-layout {
-  padding: clamp(4rem, 8vw, 7.5rem) 0;
+  padding: clamp(3rem, 6vw, 5rem) 0;
 }
 
 .biography-copy {
-  max-width: 900px;
-  margin-inline: auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .biography-copy p {
   color: rgba(21, 36, 54, 0.72);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 .biography-copy__lead {
-  color: var(--navy) !important;
-  font-family: var(--serif);
-  font-size: clamp(1.8rem, 2.7vw, 2.55rem);
-  line-height: 1.2;
+  color: rgba(21, 36, 54, 0.72) !important;
 }
 
 .family-story {
