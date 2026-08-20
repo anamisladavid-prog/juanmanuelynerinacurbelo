@@ -52,3 +52,29 @@ if ("IntersectionObserver" in window && revealItems.length) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+const demoCheckoutButton = document.querySelector("[data-demo-checkout]");
+const demoCheckoutModal = document.querySelector("[data-demo-checkout-modal]");
+const demoCheckoutCloseButtons = document.querySelectorAll("[data-demo-checkout-close]");
+
+if (demoCheckoutButton && demoCheckoutModal) {
+  const closeDemoCheckout = () => {
+    demoCheckoutModal.hidden = true;
+    document.body.classList.remove("demo-checkout-open");
+    demoCheckoutButton.focus();
+  };
+
+  demoCheckoutButton.addEventListener("click", () => {
+    demoCheckoutModal.hidden = false;
+    document.body.classList.add("demo-checkout-open");
+    demoCheckoutModal.querySelector(".demo-checkout__close")?.focus();
+  });
+
+  demoCheckoutCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeDemoCheckout);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !demoCheckoutModal.hidden) closeDemoCheckout();
+  });
+}
