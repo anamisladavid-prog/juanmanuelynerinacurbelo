@@ -1155,20 +1155,23 @@ h3 em {
 }
 
 .biography-heading {
+  max-width: 1000px;
+  margin-inline: auto;
   padding-bottom: clamp(3rem, 6vw, 5.5rem);
   border-bottom: 1px solid var(--line);
+  text-align: center;
 }
 
 .biography-heading h2 {
   max-width: 880px;
-  margin-bottom: 0;
+  margin: 0 auto;
   color: var(--navy);
   font-size: clamp(3.4rem, 6vw, 6.5rem);
 }
 
 .biography-heading > p {
   max-width: 900px;
-  margin: 1.75rem 0 0;
+  margin: 1.75rem auto 0;
   color: rgba(21, 36, 54, 0.68);
 }
 
@@ -1178,8 +1181,9 @@ h3 em {
 
 .biography-copy {
   width: 100%;
-  max-width: none;
-  margin: 0;
+  max-width: 1000px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .biography-copy p {
