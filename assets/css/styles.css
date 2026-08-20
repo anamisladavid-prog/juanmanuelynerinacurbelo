@@ -1202,9 +1202,9 @@ h3 em {
   overflow: hidden;
   padding: clamp(6rem, 12vw, 11rem) 0;
   background:
-    radial-gradient(circle at 50% 140%, rgba(61, 115, 168, 0.34), transparent 42%),
-    var(--navy-deep);
-  color: var(--white);
+    radial-gradient(circle at 50% 140%, rgba(61, 115, 168, 0.18), transparent 42%),
+    var(--blue-pale);
+  color: var(--navy);
 }
 
 .family-verse-band::before,
@@ -1212,7 +1212,7 @@ h3 em {
   position: absolute;
   width: clamp(220px, 32vw, 500px);
   aspect-ratio: 1;
-  border: 1px solid rgba(184, 210, 231, 0.12);
+  border: 1px solid rgba(11, 34, 61, 0.1);
   border-radius: 50%;
   content: "";
 }
@@ -1236,14 +1236,14 @@ h3 em {
   display: block;
   width: 72px;
   margin: 0 auto clamp(2rem, 4vw, 3.5rem);
-  border-top: 1px solid var(--blue-light);
+  border-top: 1px solid var(--navy);
   content: "";
 }
 
 .family-verse-band blockquote {
   max-width: 1180px;
   margin: 0 auto;
-  color: var(--white);
+  color: var(--navy);
   font-family: var(--serif);
   font-size: clamp(3.6rem, 7.5vw, 8rem);
   font-weight: 400;
