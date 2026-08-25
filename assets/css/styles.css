@@ -1156,7 +1156,7 @@ h3 em {
 }
 
 .biography-section {
-  padding: clamp(5rem, 10vw, 10rem) 0;
+  padding: clamp(5rem, 10vw, 10rem) 0 0;
   background: var(--ivory);
 }
 
@@ -1189,7 +1189,8 @@ h3 em {
   width: 100%;
   max-width: 1000px;
   margin-inline: auto;
-  text-align: center;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .biography-copy p {
@@ -1203,10 +1204,22 @@ h3 em {
   color: rgba(21, 36, 54, 0.72) !important;
 }
 
+.family-portrait {
+  margin: 0;
+  overflow: hidden;
+  background: var(--blue-pale);
+}
+
+.family-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .family-verse-band {
   position: relative;
   overflow: hidden;
-  padding: clamp(6rem, 12vw, 11rem) 0;
+  padding: clamp(3.25rem, 6vw, 5.5rem) 0;
   background:
     radial-gradient(circle at 50% 140%, rgba(61, 115, 168, 0.18), transparent 42%),
     var(--blue-pale);
@@ -1241,7 +1254,7 @@ h3 em {
 .family-verse-band .shell::before {
   display: block;
   width: 72px;
-  margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+  margin: 0 auto clamp(1.25rem, 2.5vw, 2rem);
   border-top: 1px solid var(--navy);
   content: "";
 }
@@ -1251,7 +1264,7 @@ h3 em {
   margin: 0 auto;
   color: var(--navy);
   font-family: var(--serif);
-  font-size: clamp(3.6rem, 7.5vw, 8rem);
+  font-size: clamp(2.8rem, 5.5vw, 5.75rem);
   font-weight: 400;
   font-style: italic;
   letter-spacing: -0.025em;
