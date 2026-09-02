@@ -1,8 +1,8 @@
 title: "Juan Manuel & Nerina Curbelo"
 description: "Sitio personal y ministerial de Juan Manuel y Nerina Curbelo."
 lang: es
-url: "https://anamisladavid-prog.github.io"
-baseurl: "/juanmanuelynerinacurbelo"
+url: "https://juanmanuelynerinacurbelo.com"
+baseurl: ""
 timezone: America/Argentina/Mendoza
 permalink: pretty
 
@@ -13,4 +13,3 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
-
