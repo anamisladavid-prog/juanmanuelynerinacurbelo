@@ -13,7 +13,6 @@
 <header class="site-header" data-header>
   <div class="site-header__inner shell">
     <nav class="desktop-nav desktop-nav--left" aria-label="{% if is_english %}Main navigation{% else %}Navegación principal{% endif %}">
-      <a {% if page.nav_key == 'inicio' %}aria-current="page"{% endif %} href="{{ is_english | default: false | if: '/en/', '/' }}"></a>
       {% if is_english %}
         <a {% if page.nav_key == 'inicio' %}aria-current="page"{% endif %} href="{{ '/en/' | relative_url }}">Home</a>
         <a {% if page.nav_key == 'nosotros' %}aria-current="page"{% endif %} href="{{ '/en/about/' | relative_url }}">About</a>
