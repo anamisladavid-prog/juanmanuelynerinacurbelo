@@ -1,15 +1,26 @@
+{% assign document_lang = page.lang | default: site.lang | default: 'es' %}
 <!doctype html>
-<html lang="{{ site.lang | default: 'es' }}">
+<html lang="{{ document_lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0b223d">
     {% seo %}
+    {% if page.alternate_url %}
+      <link rel="alternate" hreflang="{{ document_lang }}" href="{{ page.url | absolute_url }}">
+      {% if document_lang == 'en' %}
+        <link rel="alternate" hreflang="es" href="{{ page.alternate_url | absolute_url }}">
+        <link rel="alternate" hreflang="x-default" href="{{ page.alternate_url | absolute_url }}">
+      {% else %}
+        <link rel="alternate" hreflang="en" href="{{ page.alternate_url | absolute_url }}">
+        <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+      {% endif %}
+    {% endif %}
     <script>document.documentElement.classList.add("js");</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=20260902-1">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v=20260913-1">
   </head>
   <body class="{{ page.body_class }}">
     {% include header.html %}
@@ -19,6 +30,6 @@
     </main>
 
     {% include footer.html %}
-    <script src="{{ '/assets/js/site.js' | relative_url }}?v=20260902-1" defer></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}?v=20260913-1" defer></script>
   </body>
 </html>

@@ -1,0 +1,68 @@
+---
+layout: default
+title: Resources
+description: "Messages, teaching, and resources from Juan Manuel and Nerina Curbelo."
+lang: en
+alternate_url: "/recursos/"
+nav_key: recursos
+body_class: interior
+permalink: /en/resources/
+---
+
+<section class="page-hero page-hero--light">
+  <div class="page-hero__inner shell">
+    <div data-reveal>
+      <p class="eyebrow">Resources</p>
+      <h1>Content to help you grow with <em>purpose.</em></h1>
+    </div>
+    <p class="page-hero__summary" data-reveal>This space brings together messages, training materials, and reflections to support you on your journey of faith.</p>
+  </div>
+</section>
+
+<section class="library-section shell">
+  <article class="library-card" data-reveal>
+    <span class="library-card__index">01</span>
+    <p class="eyebrow">Listen</p>
+    <h2>Messages</h2>
+    <p>Sermons and conversations to strengthen your spiritual life.</p>
+    <button class="text-link library-card__link library-card__button" type="button" aria-expanded="false" aria-controls="messages" data-messages-toggle>View messages <span aria-hidden="true">↓</span></button>
+  </article>
+  <article class="library-card library-card--mid" data-reveal>
+    <span class="library-card__index">02</span>
+    <p class="eyebrow eyebrow--light">Learn</p>
+    <h2>Training</h2>
+    <p>Manuals and practical tools for leaders and ministry teams.</p>
+    <span class="coming-soon">Coming soon</span>
+  </article>
+  <article class="library-card library-card--dark" data-reveal>
+    <span class="library-card__index">03</span>
+    <p class="eyebrow eyebrow--light">Reflect</p>
+    <h2>Writings</h2>
+    <p>Reflections on faith, family, leadership, and everyday life.</p>
+    <a class="text-link text-link--light library-card__link" href="{{ '/en/resources/writings/' | relative_url }}">View writings <span aria-hidden="true">→</span></a>
+  </article>
+</section>
+
+{% assign latest_video = site.data["latest-youtube"] %}
+<section class="messages-panel" id="messages" aria-labelledby="messages-title" data-messages-panel hidden>
+  <div class="messages-panel__inner shell">
+    <div class="messages-panel__intro" data-reveal>
+      <p class="eyebrow eyebrow--light">Official YouTube channel</p>
+      <h2 id="messages-title">Watch the latest messages from Juan and Neri.</h2>
+      <p>Discover sermons, teaching, and conversations that will help strengthen your faith, deepen your spiritual growth, and live with purpose.</p>
+      <a class="button button--light" href="https://www.youtube.com/@juanmanuelynerinacurbelo" target="_blank" rel="noopener noreferrer">Visit the channel <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <article class="latest-message" data-reveal>
+      <div class="latest-message__video">
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ latest_video.video_id }}" title="{{ latest_video.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="latest-message__copy">
+        <span>Latest published message</span>
+        <h3>{{ latest_video.title }}</h3>
+        <p>In this message, Juan Manuel and Nerina share biblical teaching designed to strengthen your faith and help you grow spiritually.</p>
+        <a class="text-link text-link--light" href="{{ latest_video.url }}" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+  </div>
+</section>

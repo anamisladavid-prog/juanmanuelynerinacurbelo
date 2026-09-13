@@ -1,15 +1,33 @@
-<a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+{% assign is_english = false %}
+{% if page.lang == 'en' %}{% assign is_english = true %}{% endif %}
+{% if page.alternate_url %}
+  {% assign language_url = page.alternate_url %}
+{% elsif is_english %}
+  {% assign language_url = '/' %}
+{% else %}
+  {% assign language_url = '/en/' %}
+{% endif %}
+
+<a class="skip-link" href="#contenido-principal">{% if is_english %}Skip to content{% else %}Saltar al contenido{% endif %}</a>
 
 <header class="site-header" data-header>
   <div class="site-header__inner shell">
-    <nav class="desktop-nav desktop-nav--left" aria-label="Navegación principal">
-      <a {% if page.nav_key == 'inicio' %}aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Inicio</a>
-      <a {% if page.nav_key == 'nosotros' %}aria-current="page"{% endif %} href="{{ '/nosotros/' | relative_url }}">Nosotros</a>
-      <a {% if page.nav_key == 'ministerio' %}aria-current="page"{% endif %} href="{{ '/ministerio/' | relative_url }}">Ministerio</a>
-      <a {% if page.nav_key == 'recursos' %}aria-current="page"{% endif %} href="{{ '/recursos/' | relative_url }}">Recursos</a>
+    <nav class="desktop-nav desktop-nav--left" aria-label="{% if is_english %}Main navigation{% else %}Navegación principal{% endif %}">
+      <a {% if page.nav_key == 'inicio' %}aria-current="page"{% endif %} href="{{ is_english | default: false | if: '/en/', '/' }}"></a>
+      {% if is_english %}
+        <a {% if page.nav_key == 'inicio' %}aria-current="page"{% endif %} href="{{ '/en/' | relative_url }}">Home</a>
+        <a {% if page.nav_key == 'nosotros' %}aria-current="page"{% endif %} href="{{ '/en/about/' | relative_url }}">About</a>
+        <a {% if page.nav_key == 'ministerio' %}aria-current="page"{% endif %} href="{{ '/en/ministry/' | relative_url }}">Ministry</a>
+        <a {% if page.nav_key == 'recursos' %}aria-current="page"{% endif %} href="{{ '/en/resources/' | relative_url }}">Resources</a>
+      {% else %}
+        <a {% if page.nav_key == 'inicio' %}aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Inicio</a>
+        <a {% if page.nav_key == 'nosotros' %}aria-current="page"{% endif %} href="{{ '/nosotros/' | relative_url }}">Nosotros</a>
+        <a {% if page.nav_key == 'ministerio' %}aria-current="page"{% endif %} href="{{ '/ministerio/' | relative_url }}">Ministerio</a>
+        <a {% if page.nav_key == 'recursos' %}aria-current="page"{% endif %} href="{{ '/recursos/' | relative_url }}">Recursos</a>
+      {% endif %}
     </nav>
 
-    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Juan Manuel y Nerina Curbelo — Inicio">
+    <a class="wordmark" href="{% if is_english %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" aria-label="Juan Manuel {% if is_english %}and{% else %}y{% endif %} Nerina Curbelo — {% if is_english %}Home{% else %}Inicio{% endif %}">
       <span>Juan Manuel</span>
       <span class="wordmark__amp">&amp;</span>
       <span>Nerina</span>
@@ -17,22 +35,33 @@
     </a>
 
     <div class="site-header__actions">
-      <span class="header-mark" aria-hidden="true">JMN</span>
-      <a class="button button--compact button--light" href="{{ '/contacto/' | relative_url }}">Contacto <span aria-hidden="true">→</span></a>
+      <a class="language-switch" href="{{ language_url | relative_url }}" hreflang="{% if is_english %}es{% else %}en{% endif %}" lang="{% if is_english %}es{% else %}en{% endif %}" aria-label="{% if is_english %}Ver esta página en español{% else %}View this page in English{% endif %}">
+        {% if is_english %}ES{% else %}EN{% endif %}
+      </a>
+      <a class="button button--compact button--light" href="{% if is_english %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contacto/' | relative_url }}{% endif %}">{% if is_english %}Contact{% else %}Contacto{% endif %} <span aria-hidden="true">→</span></a>
     </div>
 
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
-      <span class="menu-toggle__label">Menú</span>
+      <span class="menu-toggle__label">{% if is_english %}Menu{% else %}Menú{% endif %}</span>
       <span class="menu-toggle__icon" aria-hidden="true"></span>
     </button>
   </div>
 
-  <nav class="mobile-nav" id="mobile-menu" aria-label="Navegación móvil" data-mobile-menu hidden>
-    <a href="{{ '/' | relative_url }}">Inicio</a>
-    <a href="{{ '/nosotros/' | relative_url }}">Nosotros</a>
-    <a href="{{ '/ministerio/' | relative_url }}">Ministerio</a>
-    <a href="{{ '/recursos/' | relative_url }}">Recursos</a>
-    <a href="{{ '/contacto/' | relative_url }}">Contacto</a>
+  <nav class="mobile-nav" id="mobile-menu" aria-label="{% if is_english %}Mobile navigation{% else %}Navegación móvil{% endif %}" data-mobile-menu hidden>
+    {% if is_english %}
+      <a href="{{ '/en/' | relative_url }}">Home</a>
+      <a href="{{ '/en/about/' | relative_url }}">About</a>
+      <a href="{{ '/en/ministry/' | relative_url }}">Ministry</a>
+      <a href="{{ '/en/resources/' | relative_url }}">Resources</a>
+      <a href="{{ '/en/contact/' | relative_url }}">Contact</a>
+      <a class="mobile-nav__language" href="{{ language_url | relative_url }}" hreflang="es" lang="es">ES · Ver en español</a>
+    {% else %}
+      <a href="{{ '/' | relative_url }}">Inicio</a>
+      <a href="{{ '/nosotros/' | relative_url }}">Nosotros</a>
+      <a href="{{ '/ministerio/' | relative_url }}">Ministerio</a>
+      <a href="{{ '/recursos/' | relative_url }}">Recursos</a>
+      <a href="{{ '/contacto/' | relative_url }}">Contacto</a>
+      <a class="mobile-nav__language" href="{{ language_url | relative_url }}" hreflang="en" lang="en">EN · View in English</a>
+    {% endif %}
   </nav>
 </header>
-

@@ -2286,3 +2286,57 @@ body.demo-checkout-open {
     padding: 2rem;
   }
 }
+
+
+/* Language selector */
+.language-switch {
+  display: inline-flex;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 253, 248, 0.42);
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.language-switch:hover,
+.language-switch:focus-visible {
+  border-color: var(--blue-light);
+  background: var(--blue-light);
+  color: var(--navy-deep);
+}
+
+.mobile-nav .mobile-nav__language {
+  width: max-content;
+  margin-top: 1.4rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(184, 210, 231, 0.7);
+  color: var(--blue-light);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.error-page__translation {
+  max-width: 760px;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.error-page__translation h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+}
+
+.error-page__translation p {
+  margin-bottom: 1.5rem;
+  color: rgba(21, 36, 54, 0.68);
+}

@@ -1,9 +1,12 @@
+{% assign is_english = false %}
+{% if page.lang == 'en' %}{% assign is_english = true %}{% endif %}
+
 <footer class="site-footer">
   <div class="site-footer__cta shell">
-    <p class="eyebrow eyebrow--light">Sigamos conectados</p>
+    <p class="eyebrow eyebrow--light">{% if is_english %}Let’s stay connected{% else %}Sigamos conectados{% endif %}</p>
     <div class="footer-invitation">
-      <h2>Una conversación puede ser el comienzo de algo con propósito.</h2>
-      <a class="circle-link" href="{{ '/contacto/' | relative_url }}" aria-label="Ir a contacto">
+      <h2>{% if is_english %}A conversation can be the beginning of something meaningful.{% else %}Una conversación puede ser el comienzo de algo con propósito.{% endif %}</h2>
+      <a class="circle-link" href="{% if is_english %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contacto/' | relative_url }}{% endif %}" aria-label="{% if is_english %}Go to contact{% else %}Ir a contacto{% endif %}">
         <span aria-hidden="true">↗</span>
       </a>
     </div>
@@ -11,33 +14,38 @@
 
   <div class="site-footer__main shell">
     <div class="footer-brand">
-      <a class="wordmark wordmark--footer" href="{{ '/' | relative_url }}">
+      <a class="wordmark wordmark--footer" href="{% if is_english %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
         <span>Juan Manuel</span>
         <span class="wordmark__amp">&amp;</span>
         <span>Nerina</span>
         <small>Curbelo</small>
       </a>
-      <p>Una vida de fe, familia y servicio compartida con propósito.</p>
+      <p>{% if is_english %}A life of faith, family, and service shared with purpose.{% else %}Una vida de fe, familia y servicio compartida con propósito.{% endif %}</p>
     </div>
 
     <div class="footer-column">
-      <p class="footer-heading">Explorar</p>
-      <a href="{{ '/nosotros/' | relative_url }}">Nosotros</a>
-      <a href="{{ '/ministerio/' | relative_url }}">Ministerio</a>
-      <a href="{{ '/recursos/' | relative_url }}">Recursos</a>
+      <p class="footer-heading">{% if is_english %}Explore{% else %}Explorar{% endif %}</p>
+      {% if is_english %}
+        <a href="{{ '/en/about/' | relative_url }}">About</a>
+        <a href="{{ '/en/ministry/' | relative_url }}">Ministry</a>
+        <a href="{{ '/en/resources/' | relative_url }}">Resources</a>
+      {% else %}
+        <a href="{{ '/nosotros/' | relative_url }}">Nosotros</a>
+        <a href="{{ '/ministerio/' | relative_url }}">Ministerio</a>
+        <a href="{{ '/recursos/' | relative_url }}">Recursos</a>
+      {% endif %}
     </div>
 
     <div class="footer-column">
-      <p class="footer-heading">Conectar</p>
-      <a href="{{ '/contacto/' | relative_url }}">Contacto</a>
+      <p class="footer-heading">{% if is_english %}Connect{% else %}Conectar{% endif %}</p>
+      <a href="{% if is_english %}{{ '/en/contact/' | relative_url }}{% else %}{{ '/contacto/' | relative_url }}{% endif %}">{% if is_english %}Contact{% else %}Contacto{% endif %}</a>
       <span>Mendoza, Argentina</span>
-      <span>Información ministerial</span>
+      <span>{% if is_english %}Ministry information{% else %}Información ministerial{% endif %}</span>
     </div>
   </div>
 
   <div class="site-footer__bottom shell">
     <p>© {{ 'now' | date: '%Y' }} Juan Manuel &amp; Nerina Curbelo.</p>
-    <p>Sitio personal y ministerial.</p>
+    <p>{% if is_english %}Personal and ministry website.{% else %}Sitio personal y ministerial.{% endif %}</p>
   </div>
 </footer>
-

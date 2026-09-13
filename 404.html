@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Página no encontrada
+title: Página no encontrada · Page not found
+lang: es
+alternate_url: "/en/"
 permalink: /404.html
 ---
 
@@ -9,5 +11,9 @@ permalink: /404.html
   <h1>Esta página no está disponible.</h1>
   <p>El enlace pudo haber cambiado o la página todavía no ha sido creada.</p>
   <a class="button button--blue" href="{{ '/' | relative_url }}">Volver al inicio <span aria-hidden="true">→</span></a>
+  <div class="error-page__translation" lang="en">
+    <h2>This page is not available.</h2>
+    <p>The link may have changed, or the page may not have been created yet.</p>
+    <a class="text-link" href="{{ '/en/' | relative_url }}">Return to the English homepage <span aria-hidden="true">→</span></a>
+  </div>
 </section>
-
