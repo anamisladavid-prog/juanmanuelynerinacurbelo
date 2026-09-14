@@ -2340,3 +2340,26 @@ body.demo-checkout-open {
   margin-bottom: 1.5rem;
   color: rgba(21, 36, 54, 0.68);
 }
+
+
+/* Amazon purchase actions */
+.button--outline {
+  border-color: var(--navy);
+  background: transparent;
+  color: var(--navy);
+}
+
+.button--outline:hover,
+.button--outline:focus-visible {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.book-offer__actions--purchase {
+  flex-wrap: wrap;
+}
+
+.book-offer__actions--purchase p {
+  flex-basis: 100%;
+  max-width: none;
+}
